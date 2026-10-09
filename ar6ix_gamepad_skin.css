@@ -1,0 +1,183 @@
+/* ============================================================
+   Skin DualSense morado "ar6ix" para GamepadViewer.com
+   USO EN OBS:
+   1. Sube controller_base.png y stick_cap.png a un hosting de
+      imágenes (Imgur, GitHub Pages, etc.) y cambia las 2 URLs
+      de abajo (BASE_URL y CAP_URL).
+   2. En gamepadviewer.com genera tu URL con el estilo XBOX
+      (o sin estilo) y cópiala.
+   3. OBS > Fuente > Navegador > pega la URL.
+      Ancho: 804   Alto: 550
+   4. Pega este CSS en "CSS personalizado" y acepta.
+   ============================================================ */
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ---------- Base del control ---------- */
+.controller.xbox {
+  background: url(https://i.imgur.com/uRahmSg.png) no-repeat 0 0;
+  width: 804px;
+  height: 550px;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+/* ---------- Sticks (se mueven y brillan al pulsar L3/R3) ---------- */
+.xbox .sticks {
+  width: 366px;
+  height: 95px;
+  left: 220px;
+  top: 246px;
+}
+.xbox .stick {
+  background: url(https://i.imgur.com/BTcmd4k.png) no-repeat 0 0 / 95px 95px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+}
+.xbox .stick.pressed {
+  background-position: 0 0 !important;
+  filter: brightness(1.7) drop-shadow(0 0 8px #c77dff);
+}
+.xbox .stick.right {
+  top: 0;
+  left: 271px;
+}
+
+/* ---------- Botones de acción (X, O, ▢, △) ---------- */
+.xbox .abxy {
+  left: 0; top: 0;
+  width: 804px; height: 550px;
+}
+.xbox .button {
+  background: none;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  opacity: 0;
+}
+.xbox .button.pressed {
+  opacity: 1;
+  margin-top: 0;
+  background: radial-gradient(circle, rgba(240,200,255,.75) 0%, rgba(190,110,255,.55) 55%, rgba(150,60,255,.15) 100%);
+  box-shadow: 0 0 14px 5px rgba(190, 100, 255, .85);
+}
+.xbox .a { left: 628px; top: 218px; }  /* Cruz     (X) */
+.xbox .b { left: 685px; top: 161px; }  /* Círculo  (O) */
+.xbox .x { left: 571px; top: 161px; }  /* Cuadrado (▢) */
+.xbox .y { left: 628px; top: 103px; }  /* Triángulo(△) */
+
+/* ---------- D-Pad ---------- */
+.xbox .dpad {
+  left: 0; top: 0;
+  width: 804px; height: 550px;
+}
+.xbox .face {
+  background: radial-gradient(ellipse, rgba(240,200,255,.8) 0%, rgba(190,110,255,.55) 60%, rgba(150,60,255,.2) 100%);
+  position: absolute;
+  border-radius: 12px;
+  opacity: 0;
+  box-shadow: 0 0 12px 4px rgba(190, 100, 255, .8);
+}
+.xbox .face.pressed { opacity: 1; }
+.xbox .face.up    { left: 131px; top: 121px; width: 46px; height: 46px; }
+.xbox .face.down  { left: 131px; top: 214px; width: 46px; height: 46px; }
+.xbox .face.left  { left: 79px;  top: 167px; width: 50px; height: 42px; }
+.xbox .face.right { left: 180px; top: 167px; width: 50px; height: 42px; }
+
+/* ---------- Create / Options ---------- */
+.xbox .arrows {
+  left: 0; top: 0;
+  width: 804px; height: 550px;
+}
+.xbox .quadrant { display: none; }
+.xbox .back, .xbox .start {
+  position: absolute;
+  float: none;
+  background: rgba(220, 160, 255, .85);
+  box-shadow: 0 0 10px 3px rgba(190, 100, 255, .9);
+  border-radius: 10px;
+  width: 26px;
+  height: 40px;
+  top: 83px;
+  opacity: 0;
+}
+.xbox .back  { left: 205px; }
+.xbox .start { left: 577px; }
+.xbox .back.pressed, .xbox .start.pressed { opacity: 1; }
+
+/* ---------- Touchpad y botón PS ---------- */
+.xbox .touchpad {
+  position: absolute;
+  left: 241px; top: 63px;
+  width: 325px; height: 149px;
+  border-radius: 14px;
+  opacity: 0;
+}
+.xbox .touchpad.pressed {
+  opacity: 1;
+  background: rgba(190, 110, 255, .35);
+  box-shadow: inset 0 0 25px 6px rgba(220, 160, 255, .8), 0 0 14px 3px rgba(190, 100, 255, .8);
+}
+.xbox .meta {
+  position: absolute;
+  left: 384px; top: 272px;
+  bottom: auto;
+  width: 40px; height: 34px;
+  border-radius: 10px;
+  opacity: 0;
+}
+.xbox .meta.pressed {
+  opacity: 1;
+  background: rgba(220, 160, 255, .45);
+  box-shadow: 0 0 14px 5px rgba(190, 100, 255, .9);
+}
+
+/* ---------- L1 / R1 ---------- */
+.xbox .bumpers {
+  left: 0; top: 0;
+  width: 804px; height: 550px;
+}
+.xbox .bumper {
+  background: rgba(220, 160, 255, .55);
+  box-shadow: 0 0 14px 5px rgba(190, 100, 255, .9);
+  border-radius: 14px 14px 6px 6px;
+  position: absolute;
+  top: 47px;
+  left: 108px;
+  width: 102px;
+  height: 34px;
+  opacity: 0;
+}
+.xbox .bumper.right { left: 598px; width: 99px; }
+.xbox .bumper.pressed { opacity: 1; }
+
+/* ---------- L2 / R2 (barra de brillo sobre los hombros;
+     la opacidad sigue la presión analógica del gatillo) ---------- */
+.xbox .triggers {
+  left: 0; top: 0;
+  width: 804px; height: 550px;
+}
+.xbox .trigger {
+  background: linear-gradient(to top, rgba(210,140,255,.95), rgba(150,60,255,0));
+  position: absolute;
+  top: 4px;
+  left: 108px;
+  width: 102px;
+  height: 40px;
+  border-radius: 14px 14px 0 0;
+  opacity: 0;
+}
+.xbox .trigger.right {
+  left: 598px;
+  width: 99px;
+  background-position: 0 0;
+  transform: none;
+}
+
+/* Control original de Sony (c) Sony Interactive Entertainment.
+   Diseño personalizado ar6ix. */
